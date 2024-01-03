@@ -32,6 +32,7 @@ ${NAME}: ${LIBFT_DIR}/${LIBFT_NAME} ${OBJ_FILES}
 ./libft/libft.a:
 	make -C ${LIBFT_DIR}
 	cp ${LIBFT_DIR}/${LIBFT_NAME} .
+	mv ${LIBFT_NAME} ${NAME}
 
 clean:
 	rm -f ${OBJ_FILES}

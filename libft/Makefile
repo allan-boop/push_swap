@@ -52,21 +52,18 @@ SRC_FILES =	ft_putnbr_fd.c \
 			arg_x.c \
 			arg_u.c \
 			arg_p.c \
-			arg_percent.c
+			arg_percent.c \
+			ft_lstmap_bonus.c \
+			ft_lstiter_bonus.c \
+			ft_lstclear_bonus.c \
+			ft_lstdelone_bonus.c \
+			ft_lstadd_back_bonus.c \
+			ft_lstlast_bonus.c \
+			ft_lstsize_bonus.c \
+			ft_lstadd_front_bonus.c \
+			ft_lstnew_bonus.c
 
 OBJ_FILES =	$(SRC_FILES:.c=.o)
-
-BONUS			=	ft_lstmap_bonus.c \
-					ft_lstiter_bonus.c \
-					ft_lstclear_bonus.c \
-					ft_lstdelone_bonus.c \
-					ft_lstadd_back_bonus.c \
-					ft_lstlast_bonus.c \
-					ft_lstsize_bonus.c \
-					ft_lstadd_front_bonus.c \
-					ft_lstnew_bonus.c
-
-BONUS_OBJ		= $(BONUS_FILES:.c=.o)
 
 ########################################
 ## RULES
@@ -76,9 +73,6 @@ all: ${NAME}
 
 ${NAME}: ${OBJ_FILES}
 			${AR} rcs $@ ${OBJ_FILES}
-
-bonus: $(BONUS_OBJ) | $(NAME)
-	ar rs $(NAME) $^
 
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
