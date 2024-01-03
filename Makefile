@@ -22,10 +22,8 @@ OBJ_FILES = ${SRC_FILES:.c=.o}
 
 all: ${NAME}
 
-${NAME}: ${LIBFT_DIR}/${LIBFT_NAME} ${PRINTF_DIR}/${PRINTF_NAME} ${OBJ_FILES}
+${NAME}: ${LIBFT_DIR}/${LIBFT_NAME} ${OBJ_FILES}
 	ar rcs $@ ${OBJ_FILES}
-	ar -x ${LIBFT_NAME}
-	ar rcs $@ *.o
 
 
 %.o: %.c
