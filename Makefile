@@ -5,8 +5,6 @@
 NAME = push_swap.a
 CFLAGS = -Wall -Wextra -Werror
 CC				= gcc
-PRINTF_DIR		=./ft_printf
-PRINTF_NAME		= printf.a
 LIBFT_DIR		=./libft
 LIBFT_NAME		= libft.a
 
@@ -14,40 +12,38 @@ LIBFT_NAME		= libft.a
 ## SOURCES
 ########################################
 
-SRC_FILES =	push_swap.c \
-			main.c
+SRC_FILES =	push_swap.c
 
-OBJ_FILES = $(SRC_FILES:.c=.o)
+OBJ_FILES = ${SRC_FILES:.c=.o}
 
 ########################################
 ## RULES
 ########################################
 
-all: $(NAME)
+all: ${NAME}
 
-$(NAME): $(LIBFT_DIR)/$(LIBFT_NAME) $(PRINTF_DIR)/$(PRINTF_NAME) $(OBJ_FILES)
-	@ar rc $@ $(OBJ_FILES)
+${NAME}: ${LIBFT_DIR}/${LIBFT_NAME} ${PRINTF_DIR}/${PRINTF_NAME} ${OBJ_FILES}
+	ar rcs $@ ${OBJ_FILES}
+	ar -x ${LIBFT_NAME}
+	ar rcs $@ *.o
+
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@
 
 ./libft/libft.a:
 	make -C ${LIBFT_DIR}
 	cp ${LIBFT_DIR}/${LIBFT_NAME} .
 
-./ft_printf/printf.a:
-	make -C ${PRINTF_DIR}
-	cp ${PRINTF_DIR}/${PRINTF_NAME} .
-
 clean:
-	rm -f $(OBJ_FILES)
-	make -C $(LIBFT_DIR) clean
-	make -C $(PRINTF_DIR) clean
+	rm -f ${OBJ_FILES}
+	rm -f *.o
+	make -C ${LIBFT_DIR} clean
 
 fclean: clean
-	rm -f $(NAME) ${LIBFT_NAME} ${PRINTF_NAME}
-	make -C $(LIBFT_DIR) fclean
-	make -C $(PRINTF_DIR) fclean
+	rm -f ${NAME} ${LIBFT_NAME}
+	rm -f *.o
+	make -C ${LIBFT_DIR} fclean
 
 re: fclean all
 

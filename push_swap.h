@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:47:49 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/03 14:09:16 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/03 16:48:20 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "./libft/libft.h"
-# include "./ft_printf/ft_printf.h"
 
 typedef struct s_stack
 {
