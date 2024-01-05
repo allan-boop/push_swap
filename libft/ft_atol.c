@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 17:10:46 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/05 19:26:51 by ahans            ###   ########.fr       */
+/*   Created: 2024/01/05 15:34:08 by ahans             #+#    #+#             */
+/*   Updated: 2024/01/05 15:36:50 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+long	ft_atol(const char *nptr)
 {
-	t_stack	*stack_a;
-	//t_stack	*stack_b;
+	long	result;
+	int		sign;
 
-	stack_a = NULL;
-	check_error(ac, av);
-	stack_a = fill_list(&stack_a, ac, av);
-
-	return (0);
+	result = 0;
+	sign = 1;
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == '-')
+	{
+		sign = -1;
+		nptr++;
+	}
+	else if (*nptr == '+')
+		nptr++;
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		result = result * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (sign * result);
 }

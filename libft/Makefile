@@ -61,7 +61,8 @@ SRC_FILES =	ft_putnbr_fd.c \
 			ft_lstlast_bonus.c \
 			ft_lstsize_bonus.c \
 			ft_lstadd_front_bonus.c \
-			ft_lstnew_bonus.c
+			ft_lstnew_bonus.c \
+			ft_atol.c
 
 OBJ_FILES =	$(SRC_FILES:.c=.o)
 

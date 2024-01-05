@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   stack_len.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 17:10:46 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/05 19:26:51 by ahans            ###   ########.fr       */
+/*   Created: 2024/01/05 19:12:35 by ahans             #+#    #+#             */
+/*   Updated: 2024/01/05 19:13:07 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+int	stack_len(t_stack *stack)
 {
-	t_stack	*stack_a;
-	//t_stack	*stack_b;
+	t_stack	*tmp;
+	int		i;
 
-	stack_a = NULL;
-	check_error(ac, av);
-	stack_a = fill_list(&stack_a, ac, av);
-
-	return (0);
+	if (!stack)
+		return (0);
+	i = 1;
+	tmp = stack;
+	while (tmp->prev != stack)
+	{
+		i++;
+		tmp = tmp->prev;
+	}
+	return (i);
 }

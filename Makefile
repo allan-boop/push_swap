@@ -12,7 +12,10 @@ LIBFT_NAME		= libft.a
 ## SOURCES
 ########################################
 
-SRC_FILES =	push_swap.c
+SRC_FILES =	push_swap.c \
+			check_error.c \
+			stack_len.c \
+			fill_list.c
 
 OBJ_FILES = ${SRC_FILES:.c=.o}
 
