@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:47:49 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/05 19:25:19 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/05 20:40:00 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ typedef struct s_stack
 //int					push(t_stack **stack, int value);
 int			check_error(int ac, char **av);
 int			stack_len(t_stack *stack);
-t_stack		*fill_list(t_stack **stack_a, int ac, char **av);
+void		fill_list(t_stack **stack_a, int ac, char **av);
 void		ft_push(t_stack **stack, int value);
+void		fill_index(t_stack **stack, int len);
+
 
 #endif

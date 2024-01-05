@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:22:53 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/05 19:23:29 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/05 20:28:37 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_push(t_stack **stack, int value)
 	last->next = new;
 }
 
-t_stack	*fill_list(t_stack **stack_a, int ac, char **av)
+void	fill_list(t_stack **stack_a, int ac, char **av)
 {
 	int	i;
 
@@ -45,5 +45,5 @@ t_stack	*fill_list(t_stack **stack_a, int ac, char **av)
 		ft_push(stack_a, ft_atol(av[i]));
 		i++;
 	}
-	return (*stack_a);
+	return ;
 }

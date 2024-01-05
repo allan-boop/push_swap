@@ -15,7 +15,8 @@ LIBFT_NAME		= libft.a
 SRC_FILES =	push_swap.c \
 			check_error.c \
 			stack_len.c \
-			fill_list.c
+			fill_list.c \
+			index.c
 
 OBJ_FILES = ${SRC_FILES:.c=.o}
 
