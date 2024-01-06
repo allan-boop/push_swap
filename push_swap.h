@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:47:49 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/05 20:40:00 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/06 16:44:11 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,21 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
-//t_stack				*create_stack(int ac, char **av);
-//int					print_stack(t_stack *stack);
-//int					ft_isnum(char *str);
-//int					push(t_stack **stack, int value);
 int			check_error(int ac, char **av);
 int			stack_len(t_stack *stack);
 void		fill_list(t_stack **stack_a, int ac, char **av);
 void		ft_push(t_stack **stack, int value);
 void		fill_index(t_stack **stack, int len);
-
+void		rra(t_stack **stack);
+void		rrb(t_stack **stack);
+void		rrr(t_stack **stack_a, t_stack **stack_b);
+void		sa(t_stack *stack);
+void		sb(t_stack *stack);
+void		ss(t_stack *stack_a, t_stack *stack_b);
+void		ra(t_stack **stack);
+void		rb(t_stack **stack);
+void		rr(t_stack **stack_a, t_stack **stack_b);
+void		pa(t_stack **stack_a, t_stack **stack_b);
+void		pb(t_stack **stack_a, t_stack **stack_b);
 
 #endif

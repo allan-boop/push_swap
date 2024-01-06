@@ -16,7 +16,11 @@ SRC_FILES =	push_swap.c \
 			check_error.c \
 			stack_len.c \
 			fill_list.c \
-			index.c
+			index.c \
+			push.c \
+			swap.c \
+			rotate.c \
+			reverse.c
 
 OBJ_FILES = ${SRC_FILES:.c=.o}
 
