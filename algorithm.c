@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_len.c                                        :+:      :+:    :+:   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 19:12:35 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/08 13:28:00 by ahans            ###   ########.fr       */
+/*   Created: 2024/01/08 13:06:30 by ahans             #+#    #+#             */
+/*   Updated: 2024/01/08 14:41:20 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
-int	stack_len(t_stack *stack)
+void	algorithm(t_stack **stack_a, t_stack **stack_b, int len)
 {
-	t_stack	*tmp;
-	int		i;
-
-	if (!stack)
-		return (0);
-	i = 1;
-	tmp = stack;
-	while (tmp->prev != stack)
-	{
-		i++;
-		tmp = tmp->prev;
-	}
-	return (i);
+	if (len == 3)
+		sort_three(stack_a);
+	else
+		sort(stack_a, stack_b, len);
+	return ;
 }
-

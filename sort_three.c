@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_len.c                                        :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 19:12:35 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/08 13:28:00 by ahans            ###   ########.fr       */
+/*   Created: 2024/01/08 13:32:21 by ahans             #+#    #+#             */
+/*   Updated: 2024/01/08 14:30:11 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_len(t_stack *stack)
+void	sort_three_a(t_stack **stack)
 {
-	t_stack	*tmp;
-	int		i;
-
-	if (!stack)
-		return (0);
-	i = 1;
-	tmp = stack;
-	while (tmp->prev != stack)
-	{
-		i++;
-		tmp = tmp->prev;
-	}
-	return (i);
+	if ((*stack)->index == 3)
+		ra(stack);
+	else if ((*stack)->next->index == 3)
+		rra(stack);
+	if ((*stack)->index == 2 && (*stack)->next->index == 1)
+		sa(*stack);
+	return ;
 }
 
+void	sort_three_b(t_stack **stack)
+{
+	if ((*stack)->index == 3)
+		rb(stack);
+	else if ((*stack)->next->index == 3)
+		rrb(stack);
+	if ((*stack)->index == 2 && (*stack)->next->index == 1)
+		sb(*stack);
+	return ;
+}
