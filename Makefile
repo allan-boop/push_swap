@@ -21,7 +21,10 @@ SRC_FILES =	push_swap.c \
 			swap.c \
 			rotate.c \
 			reverse.c \
-			sort_three.c
+			sort_three.c \
+			algorithm.c \
+			sort_five.c \
+			sort.c
 
 OBJ_FILES = ${SRC_FILES:.c=.o}
 

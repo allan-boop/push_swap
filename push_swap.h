@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:47:49 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/08 14:29:38 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/09 17:37:02 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 }					t_stack;
 
 int			check_error(int ac, char **av);
-int			stack_len(t_stack *stack);
+int			stack_len(t_stack **stack);
 void		fill_list(t_stack **stack_a, int ac, char **av);
 void		ft_push(t_stack **stack, int value);
 void		fill_index(t_stack **stack, int len);
@@ -44,5 +44,9 @@ void		pa(t_stack **stack_a, t_stack **stack_b);
 void		pb(t_stack **stack_a, t_stack **stack_b);
 void		sort_three_a(t_stack **stack);
 void		sort_three_b(t_stack **stack);
+void		algorithm(t_stack **stack_a, t_stack **stack_b, int len);
+void		sort_five(t_stack **stack_a, t_stack **stack_b, int len);
+void		sort(t_stack **stack_a, t_stack **stack_b, int len);
+void		print_stack_index(t_stack *stack);
 
 #endif

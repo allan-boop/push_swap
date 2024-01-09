@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_len.c                                        :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 19:12:35 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/09 16:48:03 by ahans            ###   ########.fr       */
+/*   Created: 2024/01/09 13:12:02 by ahans             #+#    #+#             */
+/*   Updated: 2024/01/09 13:17:40 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_len(t_stack **stack)
+void	sort_five(t_stack **stack_a, t_stack **stack_b, int len)
 {
-	t_stack	*tmp;
-	int		i;
+	int	med;
 
-	if (!stack)
-		return (0);
-	i = 1;
-	tmp = *stack;
-	while (tmp->prev != *stack)
+	med = len / 2;
+	while (len > 3)
 	{
-		i++;
-		tmp = tmp->prev;
+		if ((*stack_a)->index <= med)
+		{
+			pb(stack_a, stack_b);
+			len--;
+		}
+		else
+			ra(stack_a);
 	}
-	return (i);
+	sort_three_a(stack_a);
+	if ((*stack_b)->index < (*stack_b)->next->index)
+		sb(*stack_b);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
 }
-

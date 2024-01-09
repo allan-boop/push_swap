@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:10:46 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/08 14:38:58 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/09 17:49:44 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,8 @@ int	main(int ac, char **av)
 	stack_b = NULL;
 	check_error(ac, av);
 	fill_list(&stack_a, ac, av);
-	fill_index(&stack_a, stack_len(stack_a));
-	algorithm(&stack_a, &stack_b, stack_len(stack_a));
-	print_stack_index(stack_a);
-	ft_printf("\n");
+	fill_index(&stack_a, stack_len(&stack_a));
+	algorithm(&stack_a, &stack_b, stack_len(&stack_a));
+	print_stack_index(stack_b);
 	return (0);
 }

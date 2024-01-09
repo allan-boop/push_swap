@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 13:32:21 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/08 14:30:11 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/09 13:05:15 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 
 void	sort_three_a(t_stack **stack)
 {
-	if ((*stack)->index == 3)
+	if ((*stack)->index > (*stack)->next->index
+		&& (*stack)->index > (*stack)->next->next->index)
 		ra(stack);
-	else if ((*stack)->next->index == 3)
+	else if ((*stack)->next->index > (*stack)->index
+		&& (*stack)->next->index > (*stack)->next->next->index)
 		rra(stack);
-	if ((*stack)->index == 2 && (*stack)->next->index == 1)
+	if ((*stack)->index > (*stack)->next->index)
 		sa(*stack);
 	return ;
 }
 
 void	sort_three_b(t_stack **stack)
 {
-	if ((*stack)->index == 3)
+	if ((*stack)->index < (*stack)->next->index
+		&& (*stack)->index < (*stack)->next->next->index)
 		rb(stack);
-	else if ((*stack)->next->index == 3)
+	else if ((*stack)->next->index < (*stack)->index
+		&& (*stack)->next->index < (*stack)->next->next->index)
 		rrb(stack);
-	if ((*stack)->index == 2 && (*stack)->next->index == 1)
+	if ((*stack)->index < (*stack)->next->index)
 		sb(*stack);
 	return ;
 }
