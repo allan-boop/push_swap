@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 14:39:24 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/09 18:02:13 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/10 14:55:46 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,31 @@ int	rotate_or_reverse(t_stack **stack, int *tab)
 	return (0);
 }
 
-void	sort(t_stack **stack_a, t_stack **stack_b, int len)
+void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-	int	tab[3];
-	int	i;
+	int	tab[4];
 
 	tab[0] = 1;
 	tab[1] = 2;
 	tab[2] = 3;
-	while (tab[0] < len || tab[1] < len || tab[2] < len)
+	while (*stack_a)
 	{
-		i = 0;
-		if (rotate_or_reverse(stack_a, tab) == 1)
+		tab[4] = 0;
+		if (stack_len(stack_a) == 1 || stack_len(stack_a) == 2)
 		{
-			while (i < 3 && i <= len)
+			if ((*stack_a)->index > (*stack_a)->next->index)
+				sa(*stack_a);
+			break ;
+		}
+		else if (rotate_or_reverse(stack_a, tab) == 1)
+		{
+			while (tab[4] < 3)
 			{
 				if ((*stack_a)->index == tab[0]
 					|| (*stack_a)->index == tab[1]
 					|| (*stack_a)->index == tab[2])
 				{
-					if ((*stack_b) && (*stack_b)->next && (*stack_a)->index < (*stack_b)->index && (*stack_a)->index < (*stack_b)->next->index)
+					if ((*stack_b) && (*stack_b)->next != *stack_b && (*stack_a)->index < (*stack_b)->index && (*stack_a)->index < (*stack_b)->next->index)
 					{
 						rb(stack_b);
 						pb(stack_a, stack_b);
@@ -67,7 +72,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b, int len)
 						pb(stack_a, stack_b);
 					if ((*stack_b)->index < (*stack_b)->next->index)
 						sb(*stack_b);
-					i++;
+					tab[4]++;
 				}
 				else
 					ra(stack_a);
@@ -75,13 +80,13 @@ void	sort(t_stack **stack_a, t_stack **stack_b, int len)
 		}
 		else
 		{
-			while (i < 3 || i < len)
+			while (tab[4] < 3)
 			{
 				if ((*stack_a)->index == tab[0]
 					|| (*stack_a)->index == tab[1]
 					|| (*stack_a)->index == tab[2])
 				{
-					if ((*stack_b) && (*stack_b)->next && (*stack_a)->index < (*stack_b)->index && (*stack_a)->index < (*stack_b)->next->index)
+					if ((*stack_b) && (*stack_b)->next != *stack_b && (*stack_a)->index < (*stack_b)->index && (*stack_a)->index < (*stack_b)->next->index)
 					{
 						rb(stack_b);
 						pb(stack_a, stack_b);
@@ -92,7 +97,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b, int len)
 						pb(stack_a, stack_b);
 					if ((*stack_b)->index < (*stack_b)->next->index)
 						sb(*stack_b);
-					i++;
+					tab[4]++;
 				}
 				else
 					rra(stack_a);
