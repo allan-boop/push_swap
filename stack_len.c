@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 19:12:35 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/09 16:48:03 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/15 16:34:12 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 int	stack_len(t_stack **stack)
 {
+	int		length;
 	t_stack	*tmp;
-	int		i;
+	int		start;
 
 	if (!stack)
 		return (0);
-	i = 1;
+	if (!(*stack))
+		return (0);
+	length = 2;
 	tmp = *stack;
-	while (tmp->prev != *stack)
+	start = tmp->value;
+	tmp = tmp->next;
+	while (start != tmp->value)
 	{
-		i++;
-		tmp = tmp->prev;
+		tmp = tmp->next;
+		if (start == tmp->value)
+			return (length);
+		length++;
 	}
-	return (i);
+	return (length - 1);
 }
-
