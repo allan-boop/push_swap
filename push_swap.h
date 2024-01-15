@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:47:49 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/15 16:26:11 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/15 17:45:24 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void		rr(t_stack **stack_a, t_stack **stack_b);
 void		pa(t_stack **stack_a, t_stack **stack_b);
 void		pb(t_stack **stack_a, t_stack **stack_b);
 void		sort_three_a(t_stack **stack);
-void		sort_three_b(t_stack **stack);
 void		algorithm(t_stack **stack_a, t_stack **stack_b, int len);
 void		sort_five(t_stack **stack_a, t_stack **stack_b, int len);
 void		print_stack_index(t_stack *stack);
 void		radix_sort(t_stack **stack_a, t_stack **stack_b);
+void		free_stack(t_stack **stack);
 
 #endif

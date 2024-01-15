@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:10:46 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/10 15:50:43 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/15 17:44:36 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ int	main(int ac, char **av)
 	fill_list(&stack_a, ac, av);
 	fill_index(&stack_a, stack_len(&stack_a));
 	algorithm(&stack_a, &stack_b, stack_len(&stack_a));
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

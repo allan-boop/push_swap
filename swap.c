@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:12:43 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/06 15:12:48 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/15 17:28:06 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 	stack_a->next->value = tmp_val;
 	stack_a->index = stack_a->next->index;
 	stack_a->next->index = tmp_index;
-
 	tmp_val = stack_b->value;
 	tmp_index = stack_b->index;
 	stack_b->value = stack_b->next->value;

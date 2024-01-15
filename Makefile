@@ -24,7 +24,8 @@ SRC_FILES =	push_swap.c \
 			sort_three.c \
 			algorithm.c \
 			sort_five.c \
-			ft_radix.c
+			ft_radix.c \
+			free_stack.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 

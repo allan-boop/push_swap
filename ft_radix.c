@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:09:25 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/15 16:35:27 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/15 17:13:18 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ static int	get_max_bits(t_stack **stack)
 	int		i;
 	int		len;
 
-	i = 0;
+	if (!*stack)
+		return (0);
 	head = *stack;
-	len = stack_len(&head);
 	max = head->index;
 	max_bits = 0;
+	i = 0;
+	len = stack_len(&head);
 	while (i++ < len)
 	{
 		if (head->index > max)
