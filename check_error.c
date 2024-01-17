@@ -6,7 +6,7 @@
 /*   By: ahans <ahans@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:01:55 by ahans             #+#    #+#             */
-/*   Updated: 2024/01/05 16:02:29 by ahans            ###   ########.fr       */
+/*   Updated: 2024/01/17 17:41:58 by ahans            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	check_max(int ac, char **av)
 	{
 		if (ft_atol(av[i]) > 2147483647 || ft_atol(av[i]) < -2147483648)
 		{
-			ft_putstr_fd("Error max\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			exit (0);
 		}
 		i++;
@@ -67,7 +67,7 @@ int	check_int(int ac, char **av)
 				j++;
 			if (!ft_isdigit(av[i][j]))
 			{
-				ft_putstr_fd("Error not int\n", 2);
+				ft_putstr_fd("Error\n", 2);
 				exit (0);
 			}
 			j++;
